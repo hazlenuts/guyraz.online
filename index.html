@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>guyraz.online</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Roboto Slab', serif;
+      background: #0f0f0f;
+      color: white;
+    }
+
+    /* Intro animation */
+    #intro {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      z-index: 50;
+      animation: fadeOut 1.5s ease 1.5s forwards;
+    }
+    #intro img {
+      width: 70%;
+      max-width: 600px;
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: #1a1a1a;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: white;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background: #1e90ff;
+      transition: width 0.3s ease;
+    }
+    nav a:hover {
+      color: #1e90ff;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Main content */
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    /* Button grid */
+    .btn-container {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .btn {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      background: #1e90ff;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background: #4682b4;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Intro animation with full logo -->
+  <div id="intro">
+    <img src="guyrazonline.png" alt="Guy Raz Online">
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">
+      <img src="logo.png" alt="Guy Raz Online">
+    </a>
+    <ul>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page content -->
+  <main>
+    <h1>Welcome to GuyRaz.Online</h1>
+    <p>Your hub for games, tools, and more. Explore the links below to get started.</p>
+
+    <div class="btn-container">
+      <button class="btn" onclick="location.href='games.html'">Games</button>
+      <button class="btn" onclick="location.href='tools.html'">Tools</button>
+      <button class="btn" onclick="location.href='contact.html'">Contact</button>
+      <button class="btn" onclick="location.href='about.html'">About</button>
+    </div>
+  </main>
+</body>
+</html>
