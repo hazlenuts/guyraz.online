@@ -21,6 +21,11 @@
       color: white;
     }
 
+    /* Hourglass cursor */
+    body.waiting {
+      cursor: wait;
+    }
+
     /* Intro animation */
     #intro {
       position: fixed;
@@ -127,7 +132,8 @@
     }
   </style>
 </head>
-<body>
+<body class="waiting"> <!-- Start with hourglass cursor -->
+
   <!-- Intro animation with full logo -->
   <div id="intro">
     <img src="guyrazonline.png" alt="Guy Raz Online">
@@ -158,5 +164,16 @@
       <button class="btn" onclick="location.href='https://about.guyraz.online'">About</button>
     </div>
   </main>
+
+  <script>
+    // Remove hourglass cursor when intro animation finishes
+    const intro = document.getElementById('intro');
+    const body = document.body;
+
+    intro.addEventListener('animationend', () => {
+      body.classList.remove('waiting');
+    });
+  </script>
+
 </body>
 </html>
